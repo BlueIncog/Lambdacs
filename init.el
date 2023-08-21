@@ -33,10 +33,12 @@
 ;;  *CONTEXT MENU*
 ;; [1] - Emacs client
 ;;     [1.1] - Misc
-;;     [1.2] - Disabling/ Enabling built in Options
+;;     [1.2] - Built in Options
 ;; [2] - Packages
 ;;     [2.1] - Misc
 ;;     [2.2] - Languages
+;;
+;; PS: This config stores autosave files in your .emacs.d dir, therefore you should delete /autosave/ before transfering or sharing your config
 
 ;; ================================================================== [1] - Emacs client ================================================================
 ;; --                                                                 [1.1] - **Misc**
@@ -44,9 +46,9 @@
 (load-theme 'wombat t)
 
 ;; Set default font face
-(set-face-attribute 'default nil :font "CaskaydiaCove Nerd Font Mono")
+(set-face-attribute 'default nil :font "Cascadia Code")
 
-;; --                                                                 [1.2] - **Disabling/ Enabling built in Options**
+;; --                                                                 [1.2] - **Built in Options**
 ;; Disable the menu bar
 (menu-bar-mode -1)
 
@@ -70,6 +72,7 @@
 
 ;; Saves a Recent files list
 (recentf-mode t)
+(setq recentf-max-saved-items 10000)
 
 ;; Remembers previous user input (file selection etc.)
 (savehist-mode t)
@@ -80,6 +83,29 @@
 ;; Resize by frame, window and pixels, not by char
 (setq frame-resize-pixelwise t)
 (setq window-resize-pixelwise t)
+
+;; Clean scratch buffer
+(setq initial-scratch-message nil)
+
+;; Peace at last 💩 (Disable Emacs noise on error)
+(setq ring-bell-function 'ignore)
+
+;; Resize frames by pixel
+(setq-default frame-resize-pixelwise t)
+
+;;
+(setq gc-cons-threshold (* 100 1024 1024))
+
+;; Autosaves files in a single directory "$HOME/emacs.d/autosaves"
+(defvar emacs-autosave-directory
+  (concat user-emacs-directory "autosaves/")
+  "This variable dictates where to put auto saves. It is set to a
+  directory called autosaves located wherever your .emacs.d/ is
+  located.")
+(setq backup-directory-alist
+      `((".*" . ,emacs-autosave-directory))
+      auto-save-file-name-transforms
+      `((".*" ,emacs-autosave-directory t)))
 
 ;; Guess major mode from file name
 (setq-default major-mode
@@ -97,9 +123,26 @@
 
 ;; --                                                                 [2.1] - **Language support**
 ;; Markdown support
-(unless (package-installed-p 'markdown-mode)
-  (package-install 'markdown-mode))
+
 
 ;; JSON Support
 (unless (package-installed-p 'json-mode)
   (package-install 'json-mode))
+
+
+
+
+
+;; ================================================================== [3] - Custom Set Vars ==================================================================
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(json-mode eat)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
