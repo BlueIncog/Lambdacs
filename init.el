@@ -37,8 +37,6 @@
 ;; [2] - Packages
 ;;     [2.1] - Misc
 ;;     [2.2] - Languages
-;;
-;; PS: This config stores autosave files in your .emacs.d dir, therefore you should delete /autosave/ before transfering or sharing your config
 
 ;; ================================================================== [1] - Emacs client ================================================================
 ;; --                                                                 [1.1] - **Misc**
@@ -46,7 +44,7 @@
 (load-theme 'wombat t)
 
 ;; Set default font face
-(set-face-attribute 'default nil :font "Cascadia Code")
+(set-face-attribute 'default nil :font "CaskaydiaCove Nerd Font Mono")
 
 ;; --                                                                 [1.2] - **Built in Options**
 ;; Disable the menu bar
@@ -58,8 +56,14 @@
 ;; Disable the scroll bars
 (scroll-bar-mode -1)
 
+;; Disables tooltips 💩
+(tooltip-mode -1)
+
 ;; Disable splash screen
 (setq inhibit-startup-screen t)
+
+;; Sets default start directory (WINDOWS)
+(setq default-directory "C:/Users/%userprofile%/Desktop/Personal/Code")
 
 ;; Enable mouse-support.
 (setq eat-enable-mouse t)
@@ -90,13 +94,13 @@
 ;; Peace at last 💩 (Disable Emacs noise on error)
 (setq ring-bell-function 'ignore)
 
-;; Resize frames by pixel
-(setq-default frame-resize-pixelwise t)
-
-;;
+;; A common optimization is to temporarily disable garbage collection during initialization.
 (setq gc-cons-threshold (* 100 1024 1024))
 
-;; Autosaves files in a single directory "$HOME/emacs.d/autosaves"
+;;; Optimisation (from Doom's core.el). See that file for descriptions.
+(setq idle-update-delay 1.0)
+
+;; Autosaves files in a single directory "$HOME/.emacs.d/autosaves"
 (defvar emacs-autosave-directory
   (concat user-emacs-directory "autosaves/")
   "This variable dictates where to put auto saves. It is set to a
@@ -139,7 +143,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(json-mode eat)))
+ '(package-selected-packages '(json-mode eat))
+ '(tooltip-mode nil)
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
