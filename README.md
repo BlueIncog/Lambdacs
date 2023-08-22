@@ -2,3 +2,5 @@
 
 PS: This config stores autosave files in your .emacs.d dir, therefore you should delete /autosave/ before transfering or sharing your config
 It also uses Windows file paths, find them by searching "C:/" or "C:\"
+Also need to install "all the icons" fonts from package-assets/
+%userprofile% isn't used, so switch out username by doing find "Solarized-Incog"

@@ -1,2 +1,15 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-nil
+(("c:/Users/Solarized-Incog/.emacs.d/init.el" . 9653)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/all-the-icons-20230615.2016/all-the-icons-autoloads.el" . 2226)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/centaur-tabs-20230607.1501/centaur-tabs-autoloads.el" . 3245)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/powerline-20221110.1956/powerline-autoloads.el" . 2647)
+ ("c:/Users/Solarized-Incog/Desktop/Personal/Code/first_app/lib/main.dart" . 292)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/ace-popup-menu-20230606.1445/ace-popup-menu-autoloads.el" . 1886)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/avy-menu-20230606.1519/avy-menu-autoloads.el" . 1291)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/avy-20230420.404/avy-autoloads.el" . 8868)
+ ("c:/Users/Solarized-Incog/Desktop/Personal/Other/Apps/Emacs/bin/"
+  (dired-filename . "c:/Users/Solarized-Incog/Desktop/Personal/Other/Apps/Emacs/bin/addpm.exe"))
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/use-package-2.4.5/use-package-autoloads.el" . 12539)
+ ("c:/Users/Solarized-Incog/.emacs.d/elpa/bind-key-20230203.2004/bind-key-autoloads.el" . 3792)
+ ("c:/Users/Solarized-Incog/Desktop/Personal/Code/Emacs-Cheatsheet.txt" . 397)
+ ("c:/Users/Solarized-Incog/AppData/Roaming/mpv.net/settings.xml" . 301))
